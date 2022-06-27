@@ -75,9 +75,6 @@ public class Promotion extends AbstractBuild<PromotionProcess,Promotion> {
     public Promotion(PromotionProcess project, File buildDir) throws IOException {
         super(project, buildDir);
     }
-        
-    public static final PermissionGroup PERMISSIONS = new PermissionGroup(Promotion.class, Messages._Promotion_Permissions_Title());
-    public static final Permission PROMOTE = new Permission(PERMISSIONS, "Promote", Messages._Promotion_PromotePermission_Description(), Jenkins.ADMINISTER, PermissionScope.RUN);
 
     /**
      * Gets the build that this promotion promoted.
@@ -485,6 +482,9 @@ public class Promotion extends AbstractBuild<PromotionProcess,Promotion> {
         }
 
     }
+
+    public static final PermissionGroup PERMISSIONS = new PermissionGroup(Promotion.class, Messages._Promotion_Permissions_Title());
+    public static final Permission PROMOTE = new Permission(PERMISSIONS, "Promote", Messages._Promotion_PromotePermission_Description(), Jenkins.ADMINISTER, PermissionScope.RUN);
 
     @Override
     public int hashCode() {
